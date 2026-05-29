@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>加油小葵 Apple Style Redesign</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="phone-shell" aria-label="加油小葵页面重设计原型">
+      <section class="screen" id="homeView">
+        <header class="topbar">
+          <button class="icon-button" type="button" aria-label="返回">
+            <span aria-hidden="true">‹</span>
+          </button>
+          <div class="topbar-title">加油小葵</div>
+          <button class="icon-button" type="button" aria-label="分享">
+            <span aria-hidden="true">↗</span>
+          </button>
+        </header>
+
+        <section class="hero">
+          <img src="./assets/optimized/hero-new.jpg" alt="加油小葵项目头图" />
+          <div class="hero-shade"></div>
+          <div class="hero-content">
+            <div class="eyebrow">异地就医家庭住宿支持</div>
+            <h1>医院旁的一间安心住处</h1>
+            <p>陪诊、复查、等待结果的日子里，加油小葵让一家人能先安顿下来。</p>
+            <button class="detail-link" type="button" data-open="projectSheet">了解小葵</button>
+          </div>
+        </section>
+
+        <section class="summary-panel">
+          <div>
+            <p class="label">当前房间</p>
+            <strong id="summaryRoom">103室</strong>
+          </div>
+          <div>
+            <p class="label">本月募集</p>
+            <strong id="progressText">68.6%</strong>
+          </div>
+          <div>
+            <p class="label">我的助力</p>
+            <strong id="myRank">前 3%</strong>
+          </div>
+          <p class="summary-hint">以上数据对应下方选中的房间，切换房间后同步更新。</p>
+        </section>
+
+        <section class="warm-note" aria-label="项目说明">
+          <div class="warm-mark" aria-hidden="true"></div>
+          <div>
+            <p>很多家庭来到上海看病时，先要解决的不是治疗，而是今晚住在哪里。</p>
+            <strong>你的每一份爱心，都会靠近一盏能等他们回来的灯。</strong>
+          </div>
+        </section>
+
+        <section class="content-section room-section" aria-labelledby="roomTitle">
+          <div class="section-heading">
+            <div>
+              <p class="label">医院旁的临时家</p>
+              <h2 id="roomTitle">加油小葵</h2>
+            </div>
+            <button class="plain-button" type="button" data-open="roomSheet">选择房间</button>
+          </div>
+
+          <div class="room-tabs" role="tablist" aria-label="选择房间">
+            <button class="room-tab active" type="button" data-room="103" role="tab" aria-selected="true"><span class="house-icon" aria-hidden="true"></span>103室</button>
+            <button class="room-tab" type="button" data-room="101" role="tab" aria-selected="false"><span class="house-icon" aria-hidden="true"></span>101室</button>
+            <button class="room-tab" type="button" data-room="106" role="tab" aria-selected="false"><span class="house-icon" aria-hidden="true"></span>106室</button>
+            <button class="room-tab" type="button" data-room="102" role="tab" aria-selected="false"><span class="house-icon" aria-hidden="true"></span>102室</button>
+          </div>
+
+          <article class="progress-card">
+            <div class="room-meta">
+              <span id="roomName">103室</span>
+              <span id="roomStatus">正在募集</span>
+            </div>
+            <div class="progress-track" aria-hidden="true">
+              <span id="progressBar" style="width: 68.6%"></span>
+            </div>
+            <p id="roomCopy">还差 31.4% 即可完成本月住宿支持。</p>
+            <div class="impact-strip">
+              <span>这一间房</span>
+              <strong id="roomWarm">留给刚结束治疗、需要离医院更近的家庭。</strong>
+            </div>
+          </article>
+        </section>
+
+        <section class="content-section" aria-labelledby="familyTitle">
+          <div class="section-heading">
+            <div>
+              <p class="label">入住故事</p>
+              <h2 id="familyTitle">103室的入住故事</h2>
+            </div>
+            <button class="plain-button" type="button" data-open="storySheet">阅读全文</button>
+          </div>
+
+          <div class="story-carousel" id="storyCarousel" aria-label="入住故事列表"></div>
+          <div class="story-dots" id="storyDots" aria-label="入住故事分页"></div>
+        </section>
+
+        <section class="content-section ranking-section" aria-labelledby="rankingTitle">
+          <div class="section-heading">
+            <div>
+              <p class="label">本月捐助榜</p>
+              <h2 id="rankingTitle">谢谢这些同行的人</h2>
+            </div>
+            <button class="plain-button" type="button" data-view="rankingView">更多</button>
+          </div>
+          <p class="section-intro">他们让加油小葵的房间，更早为下一组家庭亮起灯。</p>
+          <ol class="rank-list">
+            <li><span class="rank-avatar">1</span><strong>2008份</strong><small>第 1 名</small></li>
+            <li><span class="rank-avatar">2</span><strong>1715份</strong><small>第 2 名</small></li>
+            <li><span class="rank-avatar">3</span><strong>1709份</strong><small>第 3 名</small></li>
+          </ol>
+        </section>
+
+        <nav class="donate-bar" aria-label="捐赠操作">
+          <button class="secondary-action" type="button" data-open="recordsSheet">助力记录</button>
+          <button class="primary-action" type="button" data-open="donateSheet">捐出爱心</button>
+        </nav>
+      </section>
+
+      <section class="ranking-view" id="rankingView" hidden>
+        <header class="topbar ranking-topbar">
+          <button class="icon-button" type="button" data-view="homeView" aria-label="返回">
+            <span aria-hidden="true">‹</span>
+          </button>
+          <div class="topbar-title">本月爱心榜</div>
+          <button class="icon-button" type="button" aria-label="分享">
+            <span aria-hidden="true">↗</span>
+          </button>
+        </header>
+
+        <section class="ranking-hero">
+          <img src="./assets/optimized/ranking-hero.jpg" alt="孩子拿着小鸡玩偶" />
+          <div class="ranking-hero-shade"></div>
+          <div class="ranking-hero-content">
+            <p>加油小葵 101 室</p>
+            <h1>2026年6月爱心助力榜</h1>
+            <span>每一份爱心，都让一间房更早亮起灯。</span>
+          </div>
+        </section>
+
+        <section class="podium-section" aria-label="前三名">
+          <article class="podium-card second">
+            <div class="podium-avatar">大</div>
+            <span class="podium-rank">2</span>
+            <strong>大*</strong>
+            <small>2035份</small>
+          </article>
+          <article class="podium-card first">
+            <div class="podium-avatar">t</div>
+            <span class="podium-rank">1</span>
+            <strong>t********</strong>
+            <small>2112份</small>
+          </article>
+          <article class="podium-card third">
+            <div class="podium-avatar chick">小</div>
+            <span class="podium-rank">3</span>
+            <strong>庄*****</strong>
+            <small>1999份</small>
+          </article>
+        </section>
+
+        <section class="ranking-list-section" aria-label="完整榜单">
+          <div class="ranking-list-header">
+            <div>
+              <p class="label">继续同行的人</p>
+              <h2>本月已捐</h2>
+            </div>
+            <span>实时更新</span>
+          </div>
+          <ol class="full-rank-list">
+            <li><span class="rank-number">4</span><div class="donor-avatar">江</div><strong>江**</strong><em>1906份</em></li>
+            <li><span class="rank-number">5</span><div class="donor-avatar">李</div><strong>李**</strong><em>1777份</em></li>
+            <li><span class="rank-number">6</span><div class="donor-avatar">一</div><strong>一***</strong><em>1752份</em></li>
+            <li><span class="rank-number">7</span><div class="donor-avatar">本</div><strong>本**</strong><em>1665份</em></li>
+            <li><span class="rank-number">8</span><div class="donor-avatar chick">小</div><strong>一***</strong><em>1593份</em></li>
+          </ol>
+        </section>
+
+        <section class="my-rank-card" aria-label="我的排名">
+          <span class="rank-number">-</span>
+          <div class="donor-avatar self">我</div>
+          <strong>哈（我）</strong>
+          <em>本月已捐 0 份</em>
+        </section>
+      </section>
+
+      <div class="scrim" data-close hidden></div>
+
+      <section class="sheet" id="donateSheet" aria-modal="true" aria-labelledby="donateTitle" hidden>
+        <div class="sheet-handle" aria-hidden="true"></div>
+        <header class="sheet-header">
+          <h2 id="donateTitle">捐出爱心</h2>
+          <button class="close-button" type="button" data-close aria-label="关闭">×</button>
+        </header>
+        <p class="sheet-lead">
+          这次支持将进入 <strong id="donateRoomName">103室</strong>，帮助异地就医家庭少一点路上的奔波。
+        </p>
+        <div class="segmented" role="tablist" aria-label="选择捐赠方式">
+          <button class="active" type="button" data-donate-mode="egg">爱心蛋</button>
+          <button type="button" data-donate-mode="seed">葵花籽</button>
+        </div>
+        <div class="donate-options" id="eggOptions">
+          <button class="amount active" type="button" data-amount="1">1颗</button>
+          <button class="amount" type="button" data-amount="5">5颗</button>
+          <button class="amount muted" type="button" data-amount="custom">自定义</button>
+        </div>
+        <div class="stepper" id="seedOptions" hidden>
+          <button type="button" data-step="-50" aria-label="减少">−</button>
+          <strong><span id="seedAmount">50</span>粒</strong>
+          <button type="button" data-step="50" aria-label="增加">＋</button>
+        </div>
+        <p class="donate-note" id="donateNote">当前有 73 颗爱心蛋可捐，1 颗爱心蛋 = 1 份爱心。</p>
+        <button class="sheet-primary" type="button" id="confirmDonate">确认捐赠</button>
+      </section>
+
+      <section class="sheet" id="projectSheet" aria-modal="true" aria-labelledby="projectTitle" hidden>
+        <div class="sheet-handle" aria-hidden="true"></div>
+        <header class="sheet-header">
+          <h2 id="projectTitle">项目说明</h2>
+          <button class="close-button" type="button" data-close aria-label="关闭">×</button>
+        </header>
+        <img class="sheet-photo" src="./assets/optimized/project-story.jpg" alt="加油小葵项目介绍插画" />
+        <p class="sheet-copy">“小葵”象征向阳而生。项目为异地就医的重症患儿家庭提供靠近医院的短期住宿支持，让父母在陪诊、复查、等待结果的日子里，有一个能放下行李、洗个热水澡、安静陪孩子睡一晚的地方。</p>
+      </section>
+
+      <section class="sheet" id="roomSheet" aria-modal="true" aria-labelledby="roomSheetTitle" hidden>
+        <div class="sheet-handle" aria-hidden="true"></div>
+        <header class="sheet-header">
+          <h2 id="roomSheetTitle">选择支持房间</h2>
+          <button class="close-button" type="button" data-close aria-label="关闭">×</button>
+        </header>
+        <img class="sheet-photo room-photo" src="./assets/optimized/room-building.jpg" alt="加油小葵建筑外观" />
+        <div class="room-grid">
+          <button type="button" data-pick-room="101"><span class="room-label"><i class="house-icon" aria-hidden="true"></i>101室</span><span>62%</span></button>
+          <button type="button" data-pick-room="102"><span class="room-label"><i class="house-icon" aria-hidden="true"></i>102室</span><span>71%</span></button>
+          <button class="active" type="button" data-pick-room="103"><span class="room-label"><i class="house-icon" aria-hidden="true"></i>103室</span><span>69%</span></button>
+          <button type="button" data-pick-room="105"><span class="room-label"><i class="house-icon" aria-hidden="true"></i>105室</span><span>74%</span></button>
+          <button type="button" data-pick-room="106"><span class="room-label"><i class="house-icon" aria-hidden="true"></i>106室</span><span>69%</span></button>
+        </div>
+      </section>
+
+      <section class="sheet compact" id="storySheet" aria-modal="true" aria-labelledby="fullStoryTitle" hidden>
+        <div class="sheet-handle" aria-hidden="true"></div>
+        <header class="sheet-header">
+          <h2 id="fullStoryTitle">入住故事</h2>
+          <button class="close-button" type="button" data-close aria-label="关闭">×</button>
+        </header>
+        <div class="story-gallery photo-count-1" id="storyGallery" aria-label="入住故事照片"></div>
+        <p class="sheet-copy" id="storyFullCopy">看着小宝正在经历化疗，作为妈妈，心里其实一直揪着。让人欣慰的是，小家伙身体没有明显不适反应，胃口也在慢慢恢复。加油小葵离医院很近，让我们能把更多精力留给照顾孩子。</p>
+      </section>
+
+      <section class="sheet compact" id="recordsSheet" aria-modal="true" aria-labelledby="recordsTitle" hidden>
+        <div class="sheet-handle" aria-hidden="true"></div>
+        <header class="sheet-header">
+          <h2 id="recordsTitle">助力记录</h2>
+          <button class="close-button" type="button" data-close aria-label="关闭">×</button>
+        </header>
+        <ul class="record-list">
+          <li><span>今天</span><strong>捐爱心蛋 1 颗</strong></li>
+          <li><span>05.25</span><strong>支持 103 室</strong></li>
+          <li><span>05.20</span><strong>获得葵花籽 50 粒</strong></li>
+        </ul>
+      </section>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
